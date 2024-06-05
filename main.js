@@ -36,14 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       if (error instanceof ValidError) {
         console.error("The input was not valid", error);
-        let output = document.querySelector("output");
         output.innerHTML = "Error: " + error.message;
       } else {
         throw error;
       }
     } finally {
-      let output = document.querySelector("output");
-      output.innerHTML = "0";
+      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
     }
   });
 
